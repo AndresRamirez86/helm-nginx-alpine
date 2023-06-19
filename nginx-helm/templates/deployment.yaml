@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
     labels:
         app: {{ .Values.application.name }}
-        environment: {{ Values.namespace.labels.environment }}
         namespace: {{ .Values.namespace.name }}
 spec:
     replicas: {{ .Values.numberOfReplicas }}
