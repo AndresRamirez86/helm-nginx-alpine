@@ -14,16 +14,16 @@ spec:
         metadata:
             labels:
                 app: {{ .Values.application.name }}
-    spec:
-        containers:
-        - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
-          imagePullPolicy: IfNotPresent
-          name: {{ .Values.application.name }}
-          resources:
-            requests:
-                cpu: {{ .Values.resources.cpu }}
-                memory: {{ .Values.resources.memory }}
-            limits:
-                cpu: {{ .Values.resources.cpu }}
-                memory: {{ .Values.resources.memory }}
+        spec:
+            containers:
+            - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+            imagePullPolicy: IfNotPresent
+            name: {{ .Values.application.name }}
+            resources:
+                requests:
+                    cpu: {{ .Values.resources.cpu }}
+                    memory: {{ .Values.resources.memory }}
+                limits:
+                    cpu: {{ .Values.resources.cpu }}
+                    memory: {{ .Values.resources.memory }}
 
