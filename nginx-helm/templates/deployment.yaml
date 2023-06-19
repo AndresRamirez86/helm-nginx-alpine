@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
     labels:
         app: {{ .Values.application.name }}
-        namespace: {{ .Values.namespace.name }}
+    namespace: {{ .Values.namespace.name }}
     name: {{ .Values.application.name }}
 spec:
     replicas: {{ .Values.numberOfReplicas }}
