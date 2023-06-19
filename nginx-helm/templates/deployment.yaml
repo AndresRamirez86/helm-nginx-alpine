@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    labels:
+        app: {{ .Values.application.name }}
+        environment: {{ Values.namespace.labels.environment }}
+        namespace: {{ .Values.namespace.name }}
+spec:
+    replicas: {{ .Values.numberOfReplicas }}
+    selector:
+        matchLabels:
+            app: {{ .Values.application.name }}
+    template:
+        metadata:
+            labels:
+                app: {{ .Values.application.name }}
+    spec:
+        containers:
+        - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          imagePullPolicy: IfNotPresent
+          name: {{ .Values.application.name }}
+          resources:
+            requests:
+                cpu: {{ .Values.resources.cpu }}
+                memory: {{ .Values.resources.memory }}
+            limits:
+                cpu: {{ .Values.resources.cpu }}
+                memory: {{ .Values.resources.memory }}
+

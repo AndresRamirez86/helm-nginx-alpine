@@ -1,0 +1,10 @@
+apiVersion: v1
+name: nginx-alpine 
+description: Install a nginx alpine deployment
+keywords:
+- nginx
+- alpine 
+version: 1.0.0
+maintainers:
+- name: Andres Ramirez 
+  email: andres.ramirezg86@gmail.com
